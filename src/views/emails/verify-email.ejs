@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>ToExpe</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #eaf7f5;
+        font-family: "Inter", Helvetica, Arial, sans-serif;
+      }
+      .email-container {
+        width: 100%;
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(23, 135, 124, 0.12);
+      }
+
+      @media only screen and (max-width: 480px) {
+        .body-wrapper {
+          padding: 5px !important;
+        }
+
+        .content-body {
+          padding: 24px !important;
+        }
+
+        .otp-code {
+          font-size: 30px !important;
+          letter-spacing: 6px !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="body-wrapper" style="background-color: #eaf7f5; padding: 20px">
+    <table
+      role="presentation"
+      width="100%"
+      cellspacing="0"
+      cellpadding="0"
+      border="0"
+    >
+      <tr>
+        <td align="center">
+          <div class="email-container">
+            <!-- Header: gradient strip + logo -->
+            <table
+              width="100%"
+              cellspacing="0"
+              cellpadding="0"
+              border="0"
+              style="
+                background-color: #1a9488;
+                background-image: linear-gradient(135deg, #2bb5a8, #1a9488);
+              "
+            >
+              <tr>
+                <td align="center" style="padding: 32px 20px">
+                  <table cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                      <td style="padding-right: 10px">
+                        <img
+                          src="cid:toexpe_logo"
+                          alt="ToExpe"
+                          width="35"
+                          height="35"
+                          style="display: block; object-fit: cover"
+                        />
+                      </td>
+                      <td style="text-align: left">
+                        <h2
+                          style="
+                            margin: 0;
+                            font-size: 24px;
+                            font-weight: 700;
+                            color: #ffffff;
+                            font-family:
+                              &quot;Inter&quot;, Helvetica, Arial, sans-serif;
+                          "
+                        >
+                          ToExpe
+                        </h2>
+                        <p
+                          style="
+                            margin: 0;
+                            font-size: 11px;
+                            color: #d7f2ee;
+                            margin-top: -2px;
+                            font-family:
+                              &quot;Inter&quot;, Helvetica, Arial, sans-serif;
+                          "
+                        >
+                          Spend Smarter. Save More.
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            <!-- Body -->
+            <table
+              width="100%"
+              cellspacing="0"
+              cellpadding="0"
+              border="0"
+              class="content-body"
+              style="padding: 40px; background-color: #ffffff"
+            >
+              <tr>
+                <td
+                  valign="top"
+                  style="
+                    font-family:
+                      &quot;Inter&quot;, Helvetica, Arial, sans-serif;
+                  "
+                >
+                  <h1
+                    style="
+                      font-size: 26px;
+                      font-weight: 700;
+                      color: #17877c;
+                      margin: 0 0 8px 0;
+                      font-family:
+                        &quot;Inter&quot;, Helvetica, Arial, sans-serif;
+                    "
+                  >
+                    Verify your email
+                  </h1>
+                  <p
+                    style="
+                      font-size: 14px;
+                      color: #6b7280;
+                      margin: 0 0 24px 0;
+                      font-family:
+                        &quot;Inter&quot;, Helvetica, Arial, sans-serif;
+                    "
+                  >
+                    Almost there! Enter the code below in the app to finish
+                    creating your account.
+                  </p>
+
+                  <p
+                    style="
+                      font-size: 16px;
+                      color: #1f2937;
+                      line-height: 1.6;
+                      margin: 0 0 24px 0;
+                      font-family:
+                        &quot;Inter&quot;, Helvetica, Arial, sans-serif;
+                    "
+                  >
+                    Hi <strong><%= name %>,</strong> use this One-Time Password
+                    (OTP) to verify your account and start tracking your
+                    spending with
+                    <span style="color: #1a9488; font-weight: 600">ToExpe</span
+                    >:
+                  </p>
+
+                  <!-- OTP box -->
+                  <table
+                    width="100%"
+                    cellspacing="0"
+                    cellpadding="0"
+                    border="0"
+                    style="
+                      background-color: #eaf7f5;
+                      border: 1px solid #c9ebe6;
+                      border-radius: 12px;
+                      margin-bottom: 24px;
+                    "
+                  >
+                    <tr>
+                      <td style="padding: 30px; text-align: center">
+                        <span
+                          class="otp-code"
+                          style="
+                            font-size: 36px;
+                            font-weight: 700;
+                            letter-spacing: 10px;
+                            padding-left: 10px;
+                            color: #1a9488;
+                            font-family:
+                              &quot;Inter&quot;, Helvetica, Arial, sans-serif;
+                          "
+                        >
+                          <%= otp %>
+                        </span>
+                        <p
+                          style="
+                            font-size: 14px;
+                            color: #6b7280;
+                            margin: 12px 0 0 0;
+                            letter-spacing: 0;
+                            font-family:
+                              &quot;Inter&quot;, Helvetica, Arial, sans-serif;
+                          "
+                        >
+                          This code expires in <%= typeof expiryMinutes !==
+                          'undefined' ? expiryMinutes : 5 %> minutes.
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <p
+                    style="
+                      font-size: 14px;
+                      color: #1f2937;
+                      line-height: 1.6;
+                      margin: 0 0 12px 0;
+                      font-family:
+                        &quot;Inter&quot;, Helvetica, Arial, sans-serif;
+                    "
+                  >
+                    <strong>Never share this code with anyone.</strong> The
+                    ToExpe team will never ask you for it.
+                  </p>
+
+                  <p
+                    style="
+                      font-size: 14px;
+                      color: #6b7280;
+                      line-height: 1.6;
+                      margin: 0 0 8px 0;
+                      font-family:
+                        &quot;Inter&quot;, Helvetica, Arial, sans-serif;
+                    "
+                  >
+                    If you didn't request this, you can safely ignore this
+                    email. Someone might have typed your email address by
+                    mistake.
+                  </p>
+                </td>
+              </tr>
+            </table>
+
+            <!-- Footer -->
+            <table
+              width="100%"
+              cellspacing="0"
+              cellpadding="0"
+              border="0"
+              class="content-body"
+              style="
+                background-color: #0f3f3a;
+                color: #ffffff;
+                padding: 32px 40px;
+                text-align: center;
+              "
+            >
+              <tr>
+                <td align="center">
+                  <img
+                    src="cid:toexpe_logo"
+                    alt="ToExpe"
+                    width="30"
+                    height="30"
+                    style="margin-bottom: 10px"
+                  />
+                  <p
+                    style="
+                      font-size: 14px;
+                      margin: 0 0 16px 0;
+                      color: #ffffff;
+                      font-family:
+                        &quot;Inter&quot;, Helvetica, Arial, sans-serif;
+                    "
+                  >
+                    &copy; <%= new Date().getFullYear() %> ToExpe
+                  </p>
+
+                  <p
+                    style="
+                      font-size: 12px;
+                      color: #9fd3cc;
+                      margin: 0;
+                      font-family:
+                        &quot;Inter&quot;, Helvetica, Arial, sans-serif;
+                    "
+                  >
+                    Questions?
+                    <a href="mailto:helpdesk@toexpe.com" style="color: #ffffff"
+                      >helpdesk@toexpe.com</a
+                    >
+                  </p>
+
+                  <!-- Hidden unique string so mail clients don't collapse repeated emails -->
+                  <div
+                    style="
+                      display: none !important;
+                      visibility: hidden;
+                      mso-hide: all;
+                      font-size: 1px;
+                      color: #0f3f3a;
+                      line-height: 1px;
+                      max-height: 0px;
+                      max-width: 0px;
+                      opacity: 0;
+                      overflow: hidden;
+                    "
+                  >
+                    Reference: <%= Math.random().toString(36).substring(7) %>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
