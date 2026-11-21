@@ -2,8 +2,6 @@ import "fastify";
 import ErrorHandler from "../utils/errorHandler";
 import User from "../models/v1/user.model";
 
-declare module "jsonwebtoken";
-
 declare module "fastify" {
   interface FastifyRequest {
     user: User | null;
