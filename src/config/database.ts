@@ -43,6 +43,8 @@ export const connectDB = async (): Promise<void> => {
         friendlyMessage = "Invalid DB connection parameters ⚙️";
       }
 
+      console.log("ERROR", error);
+
       logger.error(`❌ DB connection failed: ${friendlyMessage}`);
       logger.warn(`🔄 Retrying in ${delay / 1000}s...`);
       await new Promise((resolve) => setTimeout(resolve, delay));
