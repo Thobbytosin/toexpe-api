@@ -1,7 +1,3 @@
-import dns from "node:dns";
-
-dns.setDefaultResultOrder("ipv4first");
-
 import "reflect-metadata";
 import "dotenv/config";
 import { getServiceLogger } from "./utils/createLogger";
